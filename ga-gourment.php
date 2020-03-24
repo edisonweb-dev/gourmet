@@ -204,3 +204,32 @@ function estado_animo(){
   register_taxonomy( 'estado', array( 'recetas' ), $args );
 }
 add_action( 'init', 'estado_animo' );
+
+
+function precios(){
+  $labels = array(
+    'name'              => _x( 'Precio', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Precio', 'taxonomy singular name' ),
+    'search_items'      => __( 'Buscar Precio' ),
+    'all_items'         => __( 'Todos los Precios' ),
+    'parent_item'       => __( 'Genero Precio' ),
+    'parent_item_colon' => __( 'Genero Precio:' ),
+    'edit_item'         => __( 'Editar Precio' ),
+    'update_item'       => __( 'Actualizar Precio' ),
+    'add_new_item'      => __( 'Agregar Nuevo Precio' ),
+    'new_item_name'     => __( 'Nuevo Precio' ),
+    'menu_name'         => __( 'Precio de Ánimo' ),
+  );
+  
+  $args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite' => array( 'slug' => 'precio' ),
+  );
+  
+  register_taxonomy( 'precio', array( 'recetas' ), $args );
+}
+add_action( 'init', 'precios' );
