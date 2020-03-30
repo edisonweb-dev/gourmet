@@ -52,7 +52,10 @@ function crear_post_type_receta() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'page',
+    'capability_type'     => 'page',
+    'show_in_rest'        => true,
+    'rest_base'           => 'recetas-api',
+
 	);
 
 	// Por ultimo registramos el post type
